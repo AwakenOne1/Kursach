@@ -11,7 +11,8 @@
 		DA1AA8122BE52136001E0D50 /* ItemListViewController+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1AA8112BE52136001E0D50 /* ItemListViewController+UICollectionViewDelegateFlowLayout.swift */; };
 		DA1AA8142BE52433001E0D50 /* ItemListViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1AA8132BE52433001E0D50 /* ItemListViewController+DataSource.swift */; };
 		DA1AA8162BE526D5001E0D50 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1AA8152BE526D5001E0D50 /* ItemCell.swift */; };
-		DA1AA81B2BE67995001E0D50 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1AA81A2BE67995001E0D50 /* Item.swift */; };
+		DA1AA8262BE6B6D6001E0D50 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1AA8242BE6B6D6001E0D50 /* Item+CoreDataClass.swift */; };
+		DA1AA8272BE6B6D6001E0D50 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1AA8252BE6B6D6001E0D50 /* Item+CoreDataProperties.swift */; };
 		DA8AD66A2BE136FA000947C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8AD6692BE136FA000947C5 /* AppDelegate.swift */; };
 		DA8AD66C2BE136FA000947C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8AD66B2BE136FA000947C5 /* SceneDelegate.swift */; };
 		DA8AD66E2BE136FA000947C5 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8AD66D2BE136FA000947C5 /* ItemListViewController.swift */; };
@@ -21,6 +22,10 @@
 		DA8AD6822BE137AC000947C5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DA8AD6812BE137AC000947C5 /* SnapKit */; };
 		DA8AD6842BE23B80000947C5 /* WarehouseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8AD6832BE23B80000947C5 /* WarehouseTabBarController.swift */; };
 		DA8AD6862BE26BAD000947C5 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8AD6852BE26BAD000947C5 /* ScannerViewController.swift */; };
+		DAAE917B2BEBB63F00BFAA0B /* CategoryDatailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAE917A2BEBB63F00BFAA0B /* CategoryDatailViewController.swift */; };
+		DAAE917D2BEBB6B400BFAA0B /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAE917C2BEBB6B400BFAA0B /* Product.swift */; };
+		DAAE917F2BEBC5EC00BFAA0B /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAE917E2BEBC5EC00BFAA0B /* ProductCell.swift */; };
+		DAF64E912BEA7A0900E0B7CE /* ItemListViewController+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF64E902BEA7A0900E0B7CE /* ItemListViewController+CoreData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +33,8 @@
 		DA1AA8112BE52136001E0D50 /* ItemListViewController+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemListViewController+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		DA1AA8132BE52433001E0D50 /* ItemListViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemListViewController+DataSource.swift"; sourceTree = "<group>"; };
 		DA1AA8152BE526D5001E0D50 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
-		DA1AA81A2BE67995001E0D50 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		DA1AA8242BE6B6D6001E0D50 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DA1AA8252BE6B6D6001E0D50 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DA8AD6662BE136FA000947C5 /* Kursach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kursach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8AD6692BE136FA000947C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA8AD66B2BE136FA000947C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +45,10 @@
 		DA8AD67A2BE136FB000947C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA8AD6832BE23B80000947C5 /* WarehouseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarehouseTabBarController.swift; sourceTree = "<group>"; };
 		DA8AD6852BE26BAD000947C5 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		DAAE917A2BEBB63F00BFAA0B /* CategoryDatailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDatailViewController.swift; sourceTree = "<group>"; };
+		DAAE917C2BEBB6B400BFAA0B /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		DAAE917E2BEBC5EC00BFAA0B /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		DAF64E902BEA7A0900E0B7CE /* ItemListViewController+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemListViewController+CoreData.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +66,11 @@
 		DA1AA8172BE52C0C001E0D50 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				DAAE91802BEBCB7000BFAA0B /* ItemListViewController */,
 				DA1AA80F2BE51C2C001E0D50 /* CurrentOrdersViewController.swift */,
 				DA8AD6832BE23B80000947C5 /* WarehouseTabBarController.swift */,
 				DA8AD6852BE26BAD000947C5 /* ScannerViewController.swift */,
-				DA1AA8112BE52136001E0D50 /* ItemListViewController+UICollectionViewDelegateFlowLayout.swift */,
-				DA1AA8132BE52433001E0D50 /* ItemListViewController+DataSource.swift */,
-				DA8AD66D2BE136FA000947C5 /* ItemListViewController.swift */,
+				DAAE917A2BEBB63F00BFAA0B /* CategoryDatailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -69,7 +78,9 @@
 		DA1AA8182BE52C27001E0D50 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DA1AA81A2BE67995001E0D50 /* Item.swift */,
+				DA1AA8252BE6B6D6001E0D50 /* Item+CoreDataProperties.swift */,
+				DA1AA8242BE6B6D6001E0D50 /* Item+CoreDataClass.swift */,
+				DAAE917C2BEBB6B400BFAA0B /* Product.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -78,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				DA1AA8152BE526D5001E0D50 /* ItemCell.swift */,
+				DAAE917E2BEBC5EC00BFAA0B /* ProductCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -112,6 +124,17 @@
 				DA8AD6722BE136FA000947C5 /* Kursach.xcdatamodeld */,
 			);
 			path = Kursach;
+			sourceTree = "<group>";
+		};
+		DAAE91802BEBCB7000BFAA0B /* ItemListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DA8AD66D2BE136FA000947C5 /* ItemListViewController.swift */,
+				DA1AA8132BE52433001E0D50 /* ItemListViewController+DataSource.swift */,
+				DAF64E902BEA7A0900E0B7CE /* ItemListViewController+CoreData.swift */,
+				DA1AA8112BE52136001E0D50 /* ItemListViewController+UICollectionViewDelegateFlowLayout.swift */,
+			);
+			path = ItemListViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,14 +214,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA8AD66E2BE136FA000947C5 /* ItemListViewController.swift in Sources */,
+				DAAE917B2BEBB63F00BFAA0B /* CategoryDatailViewController.swift in Sources */,
+				DAAE917D2BEBB6B400BFAA0B /* Product.swift in Sources */,
 				DA8AD6862BE26BAD000947C5 /* ScannerViewController.swift in Sources */,
 				DA1AA8102BE51C2C001E0D50 /* CurrentOrdersViewController.swift in Sources */,
 				DA8AD6742BE136FA000947C5 /* Kursach.xcdatamodeld in Sources */,
 				DA1AA8162BE526D5001E0D50 /* ItemCell.swift in Sources */,
 				DA8AD6842BE23B80000947C5 /* WarehouseTabBarController.swift in Sources */,
-				DA1AA81B2BE67995001E0D50 /* Item.swift in Sources */,
 				DA1AA8142BE52433001E0D50 /* ItemListViewController+DataSource.swift in Sources */,
+				DA1AA8262BE6B6D6001E0D50 /* Item+CoreDataClass.swift in Sources */,
+				DA1AA8272BE6B6D6001E0D50 /* Item+CoreDataProperties.swift in Sources */,
 				DA1AA8122BE52136001E0D50 /* ItemListViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
+				DAF64E912BEA7A0900E0B7CE /* ItemListViewController+CoreData.swift in Sources */,
+				DAAE917F2BEBC5EC00BFAA0B /* ProductCell.swift in Sources */,
 				DA8AD66A2BE136FA000947C5 /* AppDelegate.swift in Sources */,
 				DA8AD66C2BE136FA000947C5 /* SceneDelegate.swift in Sources */,
 			);

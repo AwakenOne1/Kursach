@@ -16,8 +16,8 @@ class ItemCell: UICollectionViewCell {
         addSubview(itemImageView)
         addSubview(title)
         itemImageView.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview().inset(7)
-            make.bottom.equalToSuperview().inset(30)
+            make.top.leading.trailing.equalToSuperview().inset(10)
+            make.bottom.equalToSuperview().inset(32)
         }
         title.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview().inset(7)
