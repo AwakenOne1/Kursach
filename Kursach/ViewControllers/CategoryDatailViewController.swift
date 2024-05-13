@@ -9,16 +9,34 @@ import UIKit
 
 class CategoryDatailViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
-    let pageTitle = "Процессоры"
-    var products = [Product]()
+    var pageTitle = ""
+    var products = [Product]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+
+        }
+    }
     var collectionView: UICollectionView!
+    var categoryID: Int = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for i in 1...100 {
-            let product = Product(name: "Продукт \(i)", price: 1245,
-                                  imageName: "CpuImage", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore")
-            products.append(product)
+        let apiConfig = ApiConfig(scheme: "https",
+                                          host: "alexeydubovik.pythonanywhere.com")
+        let apiFetcher = ApiFetcher()
+        let api = API(apiConfig: apiConfig, apiFetcher: apiFetcher)
+        Task {
+            api.getProducts(category_id: self.categoryID+1) { result in
+                switch result {
+                case .success(let productsResponse):
+                    self.products = productsResponse
+                case .failure(let error):
+                    showError(for: self, with: error.descriprion)
+                }
+            }
         }
         self.navigationItem.title = pageTitle
         self.navigationController?.navigationBar.prefersLargeTitles = false

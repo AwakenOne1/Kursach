@@ -19,6 +19,9 @@ extension ItemListViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let viewController = CategoryDatailViewController()
+        viewController.categoryID = indexPath.row
+        guard let cell = collectionView.cellForItem(at: indexPath) as? ItemCell else { return }
+        viewController.pageTitle = cell.title.text ?? "Unknown Page"
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
