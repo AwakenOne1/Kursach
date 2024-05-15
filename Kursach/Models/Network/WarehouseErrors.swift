@@ -8,7 +8,6 @@
 import Foundation
 
 enum WarehouseErrors: LocalizedError {
-    
     var descriprion: String {
         switch self {
         case .failedResponse: return "Ошибка запроса"
@@ -19,13 +18,10 @@ enum WarehouseErrors: LocalizedError {
         case .failedEncoding: return "Ошибка кодирования"
         }
     }
-    
     case failedResponse
     case failedDecoding
     case invalidUrl
     case networkError
     case missingData
     case failedEncoding
-    
 }
-

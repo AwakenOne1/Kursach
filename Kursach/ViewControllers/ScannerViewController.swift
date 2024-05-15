@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 class ScannerViewController: UIViewController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Сканер"

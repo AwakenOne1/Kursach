@@ -13,7 +13,6 @@ struct Product: Decodable {
     let price: Int
     let imageName: String
     let description: String
-    
     private enum CodingKeys: String, CodingKey {
         case id
         case name
@@ -21,8 +20,6 @@ struct Product: Decodable {
         case imageName
         case description
     }
-    
-    
     init(id: Int, name: String, price: Int, imageName: String, description: String) {
         self.id = id
         self.name = name
@@ -30,7 +27,6 @@ struct Product: Decodable {
         self.imageName = imageName
         self.description = description
     }
-    
     init(from decoder: any Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         let rawId = try? values.decode(Int.self, forKey: .id)
@@ -52,5 +48,4 @@ struct Product: Decodable {
         self.imageName = imageName
         self.description = description
     }
-    
 }

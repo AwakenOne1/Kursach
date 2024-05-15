@@ -10,11 +10,9 @@ import SnapKit
 import CoreData
 
 class ItemListViewController: UIViewController {
-    
     var collectionView: UICollectionView!
     var items: [Item] = []
     var context: NSManagedObjectContext?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 //                guard let context = self.context else { fatalError("No context") }
@@ -47,7 +45,6 @@ class ItemListViewController: UIViewController {
 //                } catch {
 //                    print("oops")
 //                }
-        
         self.navigationItem.title = "Товары"
         navigationController?.navigationBar.prefersLargeTitles = true
         let layout = UICollectionViewFlowLayout()
@@ -62,14 +59,10 @@ class ItemListViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(ItemCell.self, forCellWithReuseIdentifier: "ItemCell")
-        
     }
     override func loadView() {
         super.loadView()
         createContext()
         fetchCategories()
     }
-    
 }
-
-

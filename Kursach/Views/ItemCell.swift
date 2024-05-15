@@ -10,7 +10,6 @@ import UIKit
 class ItemCell: UICollectionViewCell {
     let itemImageView = UIImageView()
     let title = UILabel()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(itemImageView)
@@ -23,7 +22,6 @@ class ItemCell: UICollectionViewCell {
             make.leading.trailing.bottom.equalToSuperview().inset(7)
         }
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

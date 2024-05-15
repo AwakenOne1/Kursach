@@ -8,7 +8,6 @@
 import UIKit
 
 class CategoryDatailViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-    
     var pageTitle = ""
     var products = [Product]() {
         didSet {
@@ -20,8 +19,6 @@ class CategoryDatailViewController: UIViewController, UICollectionViewDelegateFl
     }
     var collectionView: UICollectionView!
     var categoryID: Int = 0
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let apiConfig = ApiConfig(scheme: "https",
@@ -29,7 +26,7 @@ class CategoryDatailViewController: UIViewController, UICollectionViewDelegateFl
         let apiFetcher = ApiFetcher()
         let api = API(apiConfig: apiConfig, apiFetcher: apiFetcher)
         Task {
-            api.getProducts(category_id: self.categoryID+1) { result in
+            api.getProducts(categoryId: self.categoryID+1) { result in
                 switch result {
                 case .success(let productsResponse):
                     self.products = productsResponse
@@ -49,20 +46,14 @@ class CategoryDatailViewController: UIViewController, UICollectionViewDelegateFl
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
-        
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(ProductCell.self, forCellWithReuseIdentifier: "ProductCell")
-        
     }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return products.count
     }
-    
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as? ProductCell
         guard let cell = cell else { fatalError("Cast error")}
         let product = products[indexPath.row]
@@ -74,13 +65,10 @@ class CategoryDatailViewController: UIViewController, UICollectionViewDelegateFl
         cell.backgroundColor = UIColor(named: "SecondaryTintColor")
         return cell
     }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width - 20, height: 200)
     }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
     }
-    
 }
