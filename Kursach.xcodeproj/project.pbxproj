@@ -16,6 +16,7 @@
 		DA38BACF2BF4D22800C2D24B /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA38BACE2BF4D22800C2D24B /* OrderView.swift */; };
 		DA38BAD12BF4D48600C2D24B /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA38BAD02BF4D48600C2D24B /* Order.swift */; };
 		DA38BAD32BF4FC8100C2D24B /* remove.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA38BAD22BF4FC8100C2D24B /* remove.swift */; };
+		DA7EC1012BF505D200F3940B /* SwiftQRCodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = DA7EC1002BF505D200F3940B /* SwiftQRCodeScanner */; };
 		DA8AD66A2BE136FA000947C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8AD6692BE136FA000947C5 /* AppDelegate.swift */; };
 		DA8AD66C2BE136FA000947C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8AD66B2BE136FA000947C5 /* SceneDelegate.swift */; };
 		DA8AD66E2BE136FA000947C5 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8AD66D2BE136FA000947C5 /* ItemListViewController.swift */; };
@@ -87,6 +88,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA8AD6822BE137AC000947C5 /* SnapKit in Frameworks */,
+				DA7EC1012BF505D200F3940B /* SwiftQRCodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +211,7 @@
 			name = Kursach;
 			packageProductDependencies = (
 				DA8AD6812BE137AC000947C5 /* SnapKit */,
+				DA7EC1002BF505D200F3940B /* SwiftQRCodeScanner */,
 			);
 			productName = Kursach;
 			productReference = DA8AD6662BE136FA000947C5 /* Kursach.app */;
@@ -240,6 +243,7 @@
 			mainGroup = DA8AD65D2BE136FA000947C5;
 			packageReferences = (
 				DA8AD6802BE137AC000947C5 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				DA7EC0FF2BF505D200F3940B /* XCRemoteSwiftPackageReference "SwiftQRCodeScanner" */,
 			);
 			productRefGroup = DA8AD6672BE136FA000947C5 /* Products */;
 			projectDirPath = "";
@@ -466,6 +470,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Kursach/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "To scan qr";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -495,6 +500,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Kursach/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "To scan qr";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -536,6 +542,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DA7EC0FF2BF505D200F3940B /* XCRemoteSwiftPackageReference "SwiftQRCodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vinodiOS/SwiftQRCodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.16.0;
+			};
+		};
 		DA8AD6802BE137AC000947C5 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -547,6 +561,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DA7EC1002BF505D200F3940B /* SwiftQRCodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA7EC0FF2BF505D200F3940B /* XCRemoteSwiftPackageReference "SwiftQRCodeScanner" */;
+			productName = SwiftQRCodeScanner;
+		};
 		DA8AD6812BE137AC000947C5 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DA8AD6802BE137AC000947C5 /* XCRemoteSwiftPackageReference "SnapKit" */;

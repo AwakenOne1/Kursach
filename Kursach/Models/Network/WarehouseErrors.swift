@@ -16,6 +16,7 @@ enum WarehouseErrors: LocalizedError {
         case .networkError: return "Ошибка сети"
         case .missingData: return "Нехватка данных"
         case .failedEncoding: return "Ошибка кодирования"
+        case .invalidData: return "Были отправлены некорректные данные"
         }
     }
     case failedResponse
@@ -24,4 +25,5 @@ enum WarehouseErrors: LocalizedError {
     case networkError
     case missingData
     case failedEncoding
+    case invalidData
 }

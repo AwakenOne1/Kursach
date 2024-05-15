@@ -10,6 +10,13 @@ import SnapKit
 
 class LoginViewController: UIViewController {
     var loginTextField = UITextField()
+    var errorMessage = "" {
+        didSet {
+            DispatchQueue.main.async {
+                showError(for: self, with: self.errorMessage)
+            }
+        }
+    }
     var isLogged = false {
         didSet {
             DispatchQueue.main.async {
@@ -90,16 +97,33 @@ class LoginViewController: UIViewController {
                                   host: "alexeydubovik.pythonanywhere.com")
         let apiFetcher = ApiFetcher()
         let api = API(apiConfig: apiConfig, apiFetcher: apiFetcher)
-        DispatchQueue.main.async {
-            api.login(credentials: creds) { result in
+        let loadingAlert = createLoadingAlert()
+        present(loadingAlert, animated: true, completion: nil)
+        api.login(credentials: creds) { result in
+            DispatchQueue.main.sync {
+                
                 switch result {
                 case .success(let employee):
-                    self.isLogged.toggle()
+                    loadingAlert.dismiss(animated: false, completion: {
+                        self.isLogged.toggle()
+                    })
                 case .failure(let error):
-                    print(error.descriprion)
-                    return
+                    loadingAlert.dismiss(animated: false, completion: {
+                        self.errorMessage = error.descriprion
+                        return
+                    })
+                    
                 }
             }
         }
+    }
+    func createLoadingAlert() -> UIAlertController {
+        let alert = UIAlertController(title: nil, message: "Загрузка...", preferredStyle: .alert)
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.medium
+        loadingIndicator.startAnimating()
+        alert.view.addSubview(loadingIndicator)
+        return alert
     }
 }

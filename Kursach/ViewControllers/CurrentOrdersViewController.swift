@@ -26,17 +26,28 @@ class CurrentOrdersViewController: UIViewController {
             }
         }
     }
+    let confirmButton = UIButton()
+    let getOrderButton = UIButton()
     override func viewDidLoad() {
+        confirmButton.setTitle("Завершить заказ", for: .normal)
+        confirmButton.backgroundColor = .systemBlue
+        confirmButton.layer.cornerRadius = 7
+        confirmButton.isEnabled = false
+        confirmButton.addTarget(self, action: #selector(completeOrder), for: .touchUpInside)
         self.navigationItem.title = "Заказы"
         navigationController?.navigationBar.prefersLargeTitles = true
-        let getOrderButton = UIButton()
         getOrderButton.setTitle("Взять заказ", for: .normal)
         getOrderButton.addTarget(self, action: #selector(getOrder), for: .touchUpInside)
         getOrderButton.backgroundColor = .systemBlue
         getOrderButton.layer.cornerRadius = 7
+        view.addSubview(confirmButton)
+        confirmButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(view.frame.width/2 + 20)
+            make.top.equalToSuperview().inset(170)
+        }
         view.addSubview(getOrderButton)
         getOrderButton.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
+            make.leading.equalToSuperview().inset(view.frame.width/2 - 150)
             make.top.equalToSuperview().inset(170)
         }
         view.addSubview(orderView)
@@ -48,6 +59,8 @@ class CurrentOrdersViewController: UIViewController {
         orderView.isHidden = true
     }
     @objc func getOrder() {
+        getOrderButton.isEnabled.toggle()
+        confirmButton.isEnabled.toggle()
         orderView.stackView.removeAllArrangedSubviews()
         let apiConfig = ApiConfig(scheme: "https",
                                   host: "alexeydubovik.pythonanywhere.com")
@@ -65,5 +78,10 @@ class CurrentOrdersViewController: UIViewController {
                 }
             }
         }
+    }
+    @objc func completeOrder() {
+        self.orderView.isHidden = true
+        getOrderButton.isEnabled.toggle()
+        confirmButton.isEnabled.toggle()
     }
 }
